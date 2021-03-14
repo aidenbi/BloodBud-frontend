@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="map2.css">
+    <title>Donor Map</title>
+    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet" />
+</head>
+
+<body>
+    <style>
+        a:hover {
+            cursor: pointer;
+            transition: ease 0.35s;
+            border: white solid 1px;
+            border-radius: 12px;
+            padding: 5px;
+        }
+
+        a {
+            color: white;
+        }
+    </style>
+    <header class="bg-red-500 body-font">
+        <div class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
+            <div class="flex title-font font-medium items-center text-white mb-4 md:mb-0">
+                <img id="logo" src="heart.png" alt="img" width="40px" height="40px" />
+                <span class="ml-3 text-xl font-bold text-2xl">Get Donor</span>
+            </div>
+            <nav class="md:ml-auto flex flex-wrap items-center text-base justify-center">
+                <a class="mr-5 hover:text-black text-lg font-semibold" href="#">Donor Map</a>
+                <a class="mr-5 hover:text-black text-lg font-semibold" href="#">Compatibility</a>
+                <a class="mr-5 hover:text-black text-lg font-semibold" href="#">My data</a>
+            </nav>
+        </div>
+    </header>
+
+    <div class="flex flex-wrap">
+        <div id="rad-p" class="h-screen w-screen">
+            <div id="map" class="h-screen w-screen">
+                <div class="object-fill h-full w-full" style="
+            border: 1px solid #E9E9E9;
+            box-shadow: inset 5px 5px 10px #000000;
+            border-radius: 10px;"></div>
+            </div>
+            <div>
+                <select id="radius" name="radius" onchange="scheduleA.call(this, event)">
+                    <option value="1km">1km</option>
+                    <option value="2km">2km</option>
+                    <option value="3km">3km</option>
+                </select>
+            </div>
+        </div>
+        <div class="infobox">
+            <article>
+                <h3 class="text-5xl" style="color: #AE2D2D;">Hi<span id="username"></span>!</h3>
+                <h4 class="text-3xl">Ready to help a bud out?</h4>
+                <div class="infopara">
+                    <p class="desc">
+                        Welcome to BloodBud!<br>
+                        Currently there are over 1M People
+                        waiting for a blood donation and the
+                        chances are high that one of them is
+                        closer to you than you might think.<br>
+                        We at BloodBud believe that blood
+                        donations need to be provided faster.
+                        Therefore, we created a service to
+                        essentially connect you, the possible
+                        donator, to anyone who would need it.<br>
+                        <br>
+                        The map on the left takes your current
+                        location and shows you people in your
+                        area who are in need for a donation.
+                        By clicking on any markers on the map,
+                        you will get the donee's contact
+                        information.<br>
+                        <br>
+                        Click on the "Call now" button to quickly
+                        get in touch with the person.<br>
+                        But please keep in mind, they are in need
+                        so don't take too long trying to choose the
+                        right person.<br>
+                        <br>
+                        Save a life, <span class="underline italic" style="color: #AE2D2D;">today!</span>
+                    </p>
+
+                </div>
+            </article>
+        </div>
+    </div>
+    <footer></footer>
+    <script src="map.js"></script>
+    <script
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBIwzALxUPNbatRBj3Xi1Uhp0fFzwWNBkE&callback=initMap&libraries=&v=weekly"
+        async></script>
+
+    </script>
+</body>
+
+</html>
